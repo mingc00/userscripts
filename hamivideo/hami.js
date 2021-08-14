@@ -2,7 +2,7 @@
 // @name                 Make HamiVideo Better
 // @description          Make your player in HamiVideo better
 // @description:zh-TW    讓 HamiVideo 的播放器好用點
-// @version              1.1.0
+// @version              1.2.0
 // @author               Mingc
 // @match                https://hamivideo.hinet.net/play/*
 // @match                https://hamivideo.hinet.net/trailer/*
@@ -34,16 +34,16 @@ function resize() {
 unsafeWindow._playerSizeChange = resize;
 unsafeWindow.myPlayer.startPlay = wrap(unsafeWindow.myPlayer.startPlay, resize);
 // set chromecast button auto-hide
-function setChromecastVisible(visible) {
-  document.querySelector(".chromecast").style.display = visible
-    ? "block"
-    : "none";
+function setComponentsVisible(visible) {
+  const display = visible ? "block" : "none";
+  document.querySelector(".chromecast").style.display = display;
+  document.querySelector(".btList").style.display = display;
 }
 unsafeWindow.showTitle = wrap(unsafeWindow.showTitle, function () {
-  setChromecastVisible(true);
+  setComponentsVisible(true);
 });
 unsafeWindow.hideTitle = wrap(unsafeWindow.hideTitle, function () {
-  setChromecastVisible(false);
+  setComponentsVisible(false);
 });
 // adjust toolbar position
 const toolbarEl = document.querySelector(".toolbar");
