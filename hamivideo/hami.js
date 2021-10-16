@@ -36,8 +36,8 @@ unsafeWindow.myPlayer.startPlay = wrap(unsafeWindow.myPlayer.startPlay, resize);
 // set chromecast button auto-hide
 function setComponentsVisible(visible) {
   const display = visible ? "block" : "none";
-  document.querySelector(".chromecast").style.display = display;
-  document.querySelector(".btList").style.display = display;
+  document.querySelector(".chromecast")?.style.display = display;
+  document.querySelector(".btList")?.style.display = display;
 }
 unsafeWindow.showTitle = wrap(unsafeWindow.showTitle, function () {
   setComponentsVisible(true);
