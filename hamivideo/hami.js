@@ -2,7 +2,7 @@
 // @name                 Make HamiVideo Better
 // @description          Make your player in HamiVideo better
 // @description:zh-TW    讓 HamiVideo 的播放器好用點
-// @version              1.3.1
+// @version              1.3.2
 // @author               Mingc
 // @match                https://hamivideo.hinet.net/play/*
 // @match                https://hamivideo.hinet.net/trailer/*
@@ -67,14 +67,3 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
-
-// enable hotkey
-videojs.hook("beforesetup", function (_videoEl, options) {
-  return {
-    ...options,
-    inactivityTimeout: 2000,
-    userActions: {
-      hotkeys: true,
-    },
-  };
-});
